@@ -1,0 +1,69 @@
+
+                        <!-- /.card-body -->
+                        {{-- <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>@lang('dashboard.Author')</th>
+                                    <th>@lang('dashboard.Published_At')</th>
+                                    <th>@lang('dashboard.Rating')</th>
+                                    <th>@lang('dashboard.Status')</th>
+                                    <th>@lang('dashboard.Operations')</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($reports as $report)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $report->user->name }}</td>
+                                        <td>{{ $report->created_at }}</td>
+                                        <td>{{ $report->rating ? number_format($report->rating, 1) : __('dashboard.Not Rated') }}
+                                        </td>
+                                        <td>{{ __('dashboard.' . $report->status) }}</td>
+                                        <td>
+                                            <div class="operations-btns" style="">
+                                                <a href="{{ route('reports.show', $report['id']) }}"
+                                                    class="btn  btn-dark">@lang('dashboard.Show')</a>
+                                                <button class="btn btn-dark waves-effect waves-light"
+                                                    data-toggle="modal"
+                                                    data-target="#delete-modal{{ $loop->iteration }}">@lang('dashboard.Delete')</button>
+                                                <div id="delete-modal{{ $loop->iteration }}" class="modal fade modal2 "
+                                                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                    aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content float-left">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">تأكيد الحذف</h5>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>@lang('dashboard.sure_delete')</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" data-dismiss="modal"
+                                                                    class="btn btn-dark waves-effect waves-light m-l-5 mr-1 ml-1">
+                                                                    @lang('dashboard.close')
+                                                                </button>
+                                                                <form
+                                                                    action="{{ route('teams.destroy', $report->id) }}"
+                                                                    method="post">
+                                                                    @csrf
+                                                                    {{ method_field('delete') }}
+                                                                    <button type="submit"
+                                                                        class="btn btn-danger">@lang('dashboard.Delete')</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    @include('dashboard.core.includes.no-entries', ['columns' => 6])
+                                @endforelse
+                            </tbody> --}}
+                        </table>
+                        {{-- <div class="card-footer">
+                            {{ $reports->appends(request()->all())->links() }}
+                        </div> --}}
